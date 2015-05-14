@@ -1,0 +1,41 @@
+
+
+
+<div ng-app="app">
+
+
+	<div ng-controller="lionsCtrl">
+	<h1>Interesting People:</h1>
+		<div ng-repeat="person in peoples">
+			<h2 ng-click="toggleVisible(person)">{{person.name}}</h2>
+			<p ng-if="person.visible">{{person.text}}</p>
+			<button ng-click="deletePerson(person)">Delete this dude from the list</button>
+		</div>
+
+		<hr>
+
+		<div id="form"><h4>Add a new person!!</h4>
+		<h2>Name<input ng-model="newPerson"></h2>
+		<h2>details<input ng-model="details"></h2>
+		<button ng-click="addPerson(newPerson, details)">Submit him to the list!!</button>
+		</div>
+		<hr>
+		<div id="counter">
+		<h3>Total number of people</h3>
+		<p>{{peoples.length}}</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+</div>

@@ -1,0 +1,29 @@
+<h1>This thing works!</h1>
+
+<div ng-app="app">
+  {{ 1 + 1 }}
+  <div ng-controller="lionsCtrl">
+    {{ purpleHippo }}
+    <hr>
+    <h1>ToDo List:</h1>
+    <h4>Add a task!</h4>
+    <input ng-model="newTask">
+    <button ng-click="addTask(newTask)">Add Task</button>
+    <br>
+    <br>
+    <button ng-click="removeDeleted()">Remove completed tasks!</button>
+    
+    <ul ng-repeat="task in tasks">
+    <li>
+    <div ng-click="toggleComplete(task)" ng-class="{hit: task.completed}">{{task.task_detail}}</div>
+    <!-- <div ng-click="deleteTask(task)"></div> -->
+    </li>
+    </ul>
+
+    <h3>Tasks remaining</h3>
+    <p>{{tasks.length - (remaining())}}
+
+
+
+  </div>
+</div>
